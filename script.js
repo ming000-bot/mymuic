@@ -1,4 +1,10 @@
 const songData = [
+    {name:"一生中最爱的人DJ",singer:"阿福",src:"https://m4a.hy57.com:883/zw/2017/05/31666_www_Hy57_com.m4a",favorite:false},
+    {name:"潇洒走一回DJ",singer:"叶倩文",src:"https://m4a.hy57.com:883/zw/2017/04/31419_www_Hy57_com.m4a",favorite:false},
+    {name:"三月里的小雨DJ",singer:"童丽",src:"https://m4a.hy57.com:883/zw/2011/007/19110_www_Hy57_com.m4a",favorite:false},
+    {name:"一生与你擦肩而过DJ",singer:"阿悠悠",src:"https://m4a.hy57.com:883/zw/2021/08/139673_www_hy57_com.m4a",favorite:false},
+    {name:"多想把你抱住DJ",singer:"高进",src:"https://m4a.hy57.com:883/zw/2021/08/139675_www_hy57_com.m4a",favorite:false},
+    {name:"风中有朵雨做的云DJ",singer:"莫叫姐姐",src:"https://m4a.hy57.com:883/zw/2021/08/139668_www_hy57_com.m4a",favorite:false},
     {name:"读爱",singer:"颜小健",src:"https://m4a.hy57.com:883/zw/2025/05/187352_www_hy57_com.m4a",favorite:false},
     {name:"小莫骚麦",singer:"小咪小莫",src:"https://m4a.hy57.com:883/zw/2023/07/169545_www_hy57_com.m4a",favorite:false},
     {name:"那一夜DJ",singer:"宝贝",src:"https://m4a.hy57.com:883/zw/2011/002/16610_www_Hy57_com.m4a",favorite:false},
