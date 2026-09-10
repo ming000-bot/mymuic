@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#050816">
+    <title>赛博音乐播放器 V2.1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            bg: '#050816',
+                            card: '#0b1028',
+                            neon: '#00e5ff',
+                            pink: '#ff2eb6',
+                            gray: '#232a4a',
+                            darkgrid: '#0f1633'
+                        }
+                    },
+                    fontFamily: {
+                        tech: ['Orbitron', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-cyber-bg text-gray-100 font-tech cyber-grid-bg">
+<div class="app-shell">
+
+    <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <input id="searchInput" placeholder="检索歌名 / 歌手..."
+               class="flex-1 min-w-0 px-3 sm:px-4 py-2 rounded-md bg-cyber-card neon-border outline-none text-cyber-neon placeholder-cyan-300/50 text-sm sm:text-base">
+        <button id="randomBtn" title="随机播放"
+                class="shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-cyber-gray neon-btn flex items-center justify-center text-cyber-neon text-lg sm:text-xl">
+            <i class="fa fa-random"></i>
+        </button>
+        <button id="favModeBtn" title="收藏模式"
+                class="shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-cyber-gray pink-btn flex items-center justify-center text-cyber-pink text-lg sm:text-xl">
+            <i class="fa fa-heart-o"></i>
+        </button>
+    </div>
+
+    <div class="flex-1 min-h-0 flex flex-col neon-border rounded-lg bg-cyber-card cyber-grid-bg overflow-hidden">
+        <div class="song-grid shrink-0 px-3 py-2 sm:py-3 text-cyber-neon glow-text font-bold text-xs sm:text-sm md:text-base border-b border-cyber-neon/20">
+            <span>歌名</span>
+            <span>歌手</span>
+            <span class="text-center">收藏</span>
+        </div>
+        <div id="songList" class="flex-1 min-h-0 overflow-y-auto scroll-cyber p-2 space-y-2"></div>
+    </div>
+
+    <div class="shrink-0 neon-border rounded-lg px-2.5 py-2 sm:px-4 sm:py-3 bg-cyber-card cyber-grid-bg">
+        <div class="text-center mb-1 sm:mb-1.5">
+            <p id="nowPlayName" class="text-cyber-neon glow-text text-xs sm:text-sm md:text-base truncate leading-tight">暂无播放歌曲</p>
+            <p id="nowPlaySinger" class="text-gray-400 text-[10px] sm:text-xs truncate leading-tight">--</p>
+        </div>
+        <div class="mb-1 sm:mb-1.5">
+            <input type="range" id="progressBar" value="0" min="0" max="100" step="0.1">
+            <div class="flex justify-between text-[10px] text-gray-400 mt-0.5">
+                <span id="currentTime">00:00</span>
+                <span id="totalTime">00:00</span>
+            </div>
+        </div>
+        <div class="flex items-center justify-center gap-3 sm:gap-5 mb-1.5 sm:mb-2 text-cyber-neon">
+            <button id="prevBtn" class="control-btn" title="上一曲">
+                <i class="fa fa-step-backward"></i>
+            </button>
+            <button id="playBtn" class="control-btn play-main-btn" title="播放 / 暂停">
+                <i class="fa fa-play"></i>
+            </button>
+            <button id="nextBtn" class="control-btn" title="下一曲">
+                <i class="fa fa-step-forward"></i>
+            </button>
+        </div>
+        <div class="flex items-center gap-2">
+            <button id="volumeBtn" class="text-cyber-neon text-sm w-7 h-7 flex items-center justify-center shrink-0" title="静音切换">
+                <i class="fa fa-volume-up"></i>
+            </button>
+            <input id="volumeSlider" type="range" min="0" max="100" value="70" class="flex-1 min-w-0">
+        </div>
+    </div>
+
+</div>
+
+<audio id="audioPlayer" preload="metadata" playsinline></audio>
+<div id="tip" class="cyber-tip"></div>
+<script src="script.js"></script>
+</body>
+</html>
