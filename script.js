@@ -1,4 +1,7 @@
 const songData = [
+    {name:"山风山风等等我",singer:"万海东",src:"山风山风等等我.mp3",favorite:false},
+
+//以下是网络链接
     {name:"女声翻唱串烧",singer:"定西Dj小苏",src:"https://st.92kk.com/2025/串烧舞曲/202512/20251217/定西Dj小苏_全国语柔歌最美磁性女声翻唱榜单精选集车载连版串烧.mp3",favorite:false},
     {name:"车载CD音乐",singer:"串烧001",src:"https://st.92kk.com/2019/串烧舞曲/201903/20190328/DJ傻妞[为我的男人唱情歌]最美女声重新诠释13首乐韵柔扬连版92KK车载CD音乐.mp3",favorite:false},
     {name:"醉入心女声",singer:"串烧002",src:"https://st.92kk.com//2021/串烧舞曲/202111/20211125/[Mp3]全国语慢歌连版4月抒情音乐声声醉入心女声HQ串烧.mp3",favorite:false},
